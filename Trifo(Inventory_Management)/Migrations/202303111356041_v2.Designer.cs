@@ -7,13 +7,13 @@ namespace Trifo_Inventory_Management_.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class New : IMigrationMetadata
+    public sealed partial class v2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(New));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303110742414_New"; }
+            get { return "202303111356041_v2"; }
         }
         
         string IMigrationMetadata.Source

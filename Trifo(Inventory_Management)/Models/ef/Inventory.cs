@@ -23,6 +23,8 @@ namespace Trifo_Inventory_Management_.Models
         public String Description { get; set; }
         public Double Price { get; set; }
         public string Picture { get; set; }
+        public DateTime Buy_DateTime { get; set; }
+        public string stock { get; set; }
        
     }
 }

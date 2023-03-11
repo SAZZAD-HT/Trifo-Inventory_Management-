@@ -27,6 +27,7 @@ namespace Trifo_Inventory_Management_.Models
         public  Double Sell_Price { get; set;    }   
 
         public string sPicture { get; set; }
+        public DateTime sell_date { get; set; }
 
     }
 }
