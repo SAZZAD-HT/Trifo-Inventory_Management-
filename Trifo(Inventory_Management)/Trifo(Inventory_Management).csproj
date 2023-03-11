@@ -146,10 +146,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\lgn_style.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Homepage Image\bg-masthead.jpg" />
+    <Content Include="Homepage Image\bg-signup.jpg" />
+    <Content Include="Homepage Image\demo-image-01.jpg" />
+    <Content Include="Homepage Image\demo-image-02.jpg" />
+    <Content Include="Homepage Image\favicon.ico" />
+    <Content Include="Homepage Image\ipad.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -163,6 +171,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
