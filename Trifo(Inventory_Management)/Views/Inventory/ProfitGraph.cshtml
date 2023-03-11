@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Profit Graph";
+}
+
+<h2>Profit Graph</h2>
+
+
+
+<canvas id="profit-chart" width="800" height="400"></canvas>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script>
+        var profitData = @Html.Raw(Json.Encode(ViewBag.Profits));
+        var ctx = document.getElementById('profit-chart').getContext('2d');
+        var labels = Object.keys(profitData);
+        var data = Object.values(profitData);
+        var backgroundColors = [];
+        var borderColors = [];
+        for (var i = 0; i < labels.length; i++) {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            backgroundColors.push('rgba(' + r + ',' + g + ',' + b + ',0.2)');
+            borderColors.push('rgba(' + r + ',' + g + ',' + b + ',1)');
+        }
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Buy Sell Profit Of One Product',
+                    data: data,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Profit Graph'
+                }
+            }
+        });
+</script>
+
+@*<script>
+        const ctx = document.getElementById('profit-chart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>*@
+
+

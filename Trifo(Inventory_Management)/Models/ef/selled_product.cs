@@ -12,6 +12,7 @@ namespace Trifo_Inventory_Management_.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Sid { get; set; }
+
         public int sPid { get; set; }
 
         public string sProduct_name { get; set; }
