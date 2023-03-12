@@ -17,6 +17,7 @@ namespace Trifo_Inventory_Management_.Controllers
         {
             return View();
         }
+
         public ActionResult ChartShow()
         {
             return View();
