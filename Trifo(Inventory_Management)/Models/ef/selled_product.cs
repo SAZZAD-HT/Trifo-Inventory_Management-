@@ -28,6 +28,7 @@ namespace Trifo_Inventory_Management_.Models
 
         public string sPicture { get; set; }
         public DateTime sell_date { get; set; }
+        public string Selled_Quantity { get; set; }   
 
     }
 }

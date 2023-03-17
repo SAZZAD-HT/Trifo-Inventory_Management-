@@ -149,6 +149,10 @@
     <Compile Include="Migrations\202303111356041_v2.designer.cs">
       <DependentUpon>202303111356041_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303171846103_new2.cs" />
+    <Compile Include="Migrations\202303171846103_new2.designer.cs">
+      <DependentUpon>202303171846103_new2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbContext.cs" />
     <Compile Include="Models\ef\Inventory.cs" />
@@ -161,6 +165,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\lgn_style.css" />
+    <Content Include="Content\styleAddInventory.css" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -201,6 +206,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Inventory\ProfitGraph.cshtml" />
+    <Content Include="Views\Inventory\AddToInventory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -221,6 +227,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303111356041_v2.resx">
       <DependentUpon>202303111356041_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303171846103_new2.resx">
+      <DependentUpon>202303171846103_new2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
