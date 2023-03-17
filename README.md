@@ -44,8 +44,8 @@
 		<h2>License</h2>
 		<p>This project is licensed under the MIT License - see the LICENSE.md file for details.</p>
 		<h2>Acknowledgments</h2>
-		<p>Special thanks to Jane Doe for her contributions to this project.</p>
-		<img src="https://example.com/image.jpg" alt="example image">
+		
+		<img src="https://avatars.githubusercontent.com/u/66819027?v=4" alt="example image">
 	</main>
 	<footer>
 		<p>&copy; 2023 GitHub, Inc.</p>
