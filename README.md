@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-
 <head>
-	
-	<meta charset="UTF-8">
+	<title> v1</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Inventory management website built with ASP.NET MVC framework. Allows users to view, add, edit, and delete items in an inventory.">
 	<meta name="keywords" content="Inventory management, ASP.NET, MVC, C#, HTML, CSS, JavaScript">
