@@ -79,5 +79,9 @@ namespace Trifo_Inventory_Management_.Controllers
         {
             return View();
         }
+        public ActionResult AddToInventory()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,70 @@
+﻿.form-horizontal {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+    .form-horizontal h4 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .form-horizontal label {
+        font-weight: bold;
+    }
+
+    .form-horizontal input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        .form-horizontal input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
+    .form-horizontal select {
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.text-danger {
+    color: red;
+}
+
+.validation-summary-errors {
+    color: red;
+    margin-bottom: 20px;
+}
+/* animate form elements */
+.form-horizontal > div {
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* add background color */
+body {
+    background-color: blue;
+}
