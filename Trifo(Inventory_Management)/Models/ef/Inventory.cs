@@ -21,10 +21,12 @@ namespace Trifo_Inventory_Management_.Models
 
 
         public String Description { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "Price must be a valid number with up to 2 decimal places.")]
         public Double Price { get; set; }
         public string Picture { get; set; }
         public DateTime Buy_DateTime { get; set; }
         public string stock { get; set; }
+        [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "Enter valid number")]
         public string Quantity { get; set; }    
        
     }
