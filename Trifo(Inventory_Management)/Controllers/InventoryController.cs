@@ -85,6 +85,7 @@ namespace Trifo_Inventory_Management_.Controllers
         {
             return View();
         }
+        //forhad
         [HttpPost]
         public ActionResult AddToInventory(Inventory IN,HttpPostedFileBase file)
         {
