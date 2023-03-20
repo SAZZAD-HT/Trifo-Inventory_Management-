@@ -153,6 +153,10 @@
     <Compile Include="Migrations\202303171846103_new2.designer.cs">
       <DependentUpon>202303171846103_new2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303200520113_v3.cs" />
+    <Compile Include="Migrations\202303200520113_v3.designer.cs">
+      <DependentUpon>202303200520113_v3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbContext.cs" />
     <Compile Include="Models\ef\Inventory.cs" />
@@ -211,6 +215,9 @@
     <Content Include="Views\Inventory\AddToInventory.cshtml" />
     <Content Include="Views\Inventory\succesfullyAction_Performed.cshtml" />
     <Content Include="Views\Inventory\Home.cshtml" />
+    <Content Include="Views\Inventory\Sell.cshtml" />
+    <Content Include="Views\Inventory\x.cshtml" />
+    <Content Include="Views\Inventory\xx.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\PicturesSave\" />
@@ -234,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303171846103_new2.resx">
       <DependentUpon>202303171846103_new2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303200520113_v3.resx">
+      <DependentUpon>202303200520113_v3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

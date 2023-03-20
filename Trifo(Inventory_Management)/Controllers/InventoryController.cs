@@ -136,12 +136,17 @@ namespace Trifo_Inventory_Management_.Controllers
         [HttpGet]
         public ActionResult Sell()
         {
+            var db = new dbContext();
+            var inventory = db.Inventory;
+            ViewBag.Inventory = inventory;
             return View();
+           
         }
         [HttpPost]
-        public ActionResult Selll(selled_product SL)
+        public ActionResult Selll(selled_product SL,int id)
         {
             var db = new dbContext();
+            
             
             return RedirectToAction("succesfullyAction_Performed");
         }
