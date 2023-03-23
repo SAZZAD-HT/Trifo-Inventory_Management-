@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.EnterpriseServices.Internal;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Helpers;
@@ -78,6 +79,77 @@ namespace Trifo_Inventory_Management_.Controllers
         public ActionResult Pie_chart_Monthly_sale_Category()
         {
             return View();
+        }
+        [HttpGet]
+        public ActionResult AddToInventory()
+        {
+            return View();
+        }
+        //forhad
+        [HttpPost]
+        public ActionResult AddToInventory(Inventory IN,HttpPostedFileBase file)
+        {
+            var db = new dbContext();
+            if (file != null && file.ContentLength > 0)
+            {
+
+                //var fileName = Path.GetFileName(file.FileName);
+                //var fileExtension = Path.GetExtension(fileName);
+                //var newFileName = Guid.NewGuid().ToString() + fileExtension;
+                //var path = Path.Combine(Server.MapPath("~/App_data/pic_uploaded"), newFileName);
+                //file.SaveAs(path);
+                //var filePath = $"~/App_data/pic_uploaded/{newFileName}";
+                //PA.pic=filePath;
+
+                var path = Server.MapPath("~/App_data/PicturesSave"); 
+                var maxNumber = Directory.GetFiles(path)
+                    .Select(f => Path.GetFileNameWithoutExtension(f))
+                    .Where(f => f.StartsWith("pic"))
+                    .Select(f => int.Parse(f.Substring(3)))
+                    .DefaultIfEmpty(0)
+                    .Max();
+                var newFileName = $"pic{maxNumber + 1}{Path.GetExtension(file.FileName)}";
+                var fullPath = Path.Combine(path, newFileName);
+                file.SaveAs(fullPath);
+                IN.Picture  = fullPath;
+            }
+            if (IN.Quantity != null)
+            {
+                IN.stock = "IN STOCK";
+            }
+            else
+            {
+                IN.stock = "OUT OF STOCK";
+
+            }
+            db.Inventory.Add(IN); 
+            db.SaveChanges();
+            return RedirectToAction("succesfullyAction_Performed");
+        }
+        public ActionResult succesfullyAction_Performed()
+        {
+            return View();
+        }
+        public ActionResult Home()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Sell()
+        {
+            var db = new dbContext();
+            var inventory = db.Inventory;
+            ViewBag.Inventory = inventory;
+            return View();
+           
+        }
+        [HttpPost]
+        public ActionResult Selll(selled_product SL,int id)
+        {
+            var db = new dbContext();
+            
+            
+            return RedirectToAction("succesfullyAction_Performed");
         }
     }
 }
