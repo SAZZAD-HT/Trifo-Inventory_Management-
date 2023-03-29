@@ -141,7 +141,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\MemoController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,10 +162,17 @@
     <Compile Include="Migrations\202303200520113_v3.designer.cs">
       <DependentUpon>202303200520113_v3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303291452040_changed.cs" />
+    <Compile Include="Migrations\202303291452040_changed.designer.cs">
+      <DependentUpon>202303291452040_changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbContext.cs" />
+    <Compile Include="Models\ef\ImportList.cs" />
     <Compile Include="Models\ef\Inventory.cs" />
     <Compile Include="Models\ef\selled_product.cs" />
+    <Compile Include="Models\ef\Shop.cs" />
+    <Compile Include="Models\ef\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +235,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\PicturesSave\" />
+    <Folder Include="Views\Import\" />
+    <Folder Include="Views\Memo\" />
+    <Folder Include="Views\Shop\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Warehouse\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -246,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303200520113_v3.resx">
       <DependentUpon>202303200520113_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303291452040_changed.resx">
+      <DependentUpon>202303291452040_changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
