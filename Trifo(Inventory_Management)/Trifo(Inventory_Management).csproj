@@ -268,12 +268,6 @@
       <DependentUpon>202303291452040_changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Buisness Acess Layer\Buisness Acess Layer.csproj">
-      <Project>{2eaf3077-c6d1-4cad-96df-69c40036a748}</Project>
-      <Name>Buisness Acess Layer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
