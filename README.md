@@ -47,8 +47,6 @@
 		
 		
 	</main>
-	<footer>
-		<p>&copy; 2023 GitHub, Inc.</p>
-	</footer>
+	
 </body>
 </html>
