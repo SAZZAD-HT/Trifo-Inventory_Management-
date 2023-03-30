@@ -232,14 +232,21 @@
     <Content Include="Views\Inventory\Sell.cshtml" />
     <Content Include="Views\Inventory\x.cshtml" />
     <Content Include="Views\Inventory\xx.cshtml" />
+    <Content Include="Views\Shop\AddToshop.cshtml" />
+    <Content Include="Views\Shop\Viewshop.cshtml" />
+    <Content Include="Views\Shop\Delete.cshtml" />
+    <Content Include="Views\Shop\Edit.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Warehouse\ViewWarehouse.cshtml" />
+    <Content Include="Views\Warehouse\AddToWarehouse.cshtml" />
+    <Content Include="Views\Warehouse\Edit.cshtml" />
+    <Content Include="Views\Warehouse\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\PicturesSave\" />
     <Folder Include="Views\Import\" />
     <Folder Include="Views\Memo\" />
-    <Folder Include="Views\Shop\" />
     <Folder Include="Views\User\" />
-    <Folder Include="Views\Warehouse\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
