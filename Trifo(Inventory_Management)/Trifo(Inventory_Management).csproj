@@ -166,6 +166,10 @@
     <Compile Include="Migrations\202303291452040_changed.designer.cs">
       <DependentUpon>202303291452040_changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303300601402_changed2.cs" />
+    <Compile Include="Migrations\202303300601402_changed2.designer.cs">
+      <DependentUpon>202303300601402_changed2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\dbContext.cs" />
     <Compile Include="Models\ef\ImportList.cs" />
@@ -241,9 +245,12 @@
     <Content Include="Views\Warehouse\AddToWarehouse.cshtml" />
     <Content Include="Views\Warehouse\Edit.cshtml" />
     <Content Include="Views\Warehouse\Delete.cshtml" />
+    <Content Include="Views\Shop\Details.cshtml" />
+    <Content Include="Views\Shop\image_cheack.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\PicturesSave\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="PicturesSave\" />
     <Folder Include="Views\Import\" />
     <Folder Include="Views\Memo\" />
     <Folder Include="Views\User\" />
@@ -273,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303291452040_changed.resx">
       <DependentUpon>202303291452040_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303300601402_changed2.resx">
+      <DependentUpon>202303300601402_changed2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

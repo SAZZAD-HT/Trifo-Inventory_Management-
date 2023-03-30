@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,9 +37,44 @@ namespace Trifo_Inventory_Management_.Controllers
 
 
         [HttpPost]
-        public ActionResult AddToWarehouse(Warehouse h)
+        public ActionResult AddToWarehouse(Warehouse h, HttpPostedFileBase file)
         {
             var db = new dbContext();
+
+
+            if (file != null && file.ContentLength > 0)
+            {
+
+                //var fileName = Path.GetFileName(file.FileName);
+                //var fileExtension = Path.GetExtension(fileName);
+                //var newFileName = Guid.NewGuid().ToString() + fileExtension;
+                //var path = Path.Combine(Server.MapPath("~/App_data/pic_uploaded"), newFileName);
+                //file.SaveAs(path);
+                //var filePath = $"~/App_data/pic_uploaded/{newFileName}";
+                //PA.pic=filePath;
+
+                var path = Server.MapPath("~/App_data/PicturesSave");
+                var maxNumber = Directory.GetFiles(path)
+                    .Select(f => Path.GetFileNameWithoutExtension(f))
+                    .Where(f => f.StartsWith("pic"))
+                    .Select(f => int.Parse(f.Substring(3)))
+                    .DefaultIfEmpty(0)
+                    .Max();
+                var newFileName = $"pic{maxNumber + 1}{Path.GetExtension(file.FileName)}";
+                var fullPath = Path.Combine(path, newFileName);
+                file.SaveAs(fullPath);
+                h.Picture = fullPath;
+            }
+            if (h.Quantity != null)
+            {
+                h.stock = "IN STOCK";
+            }
+            else
+            {
+                h.stock = "OUT OF STOCK";
+
+            }
+          
             db.Warehouse.Add(h);
             db.SaveChanges();
             return Redirect("ViewWarehouse");
@@ -69,10 +105,11 @@ namespace Trifo_Inventory_Management_.Controllers
             Warehouses.sell_date = h.sell_date;
             Warehouses.Buy_Price = h.Buy_Price;
             Warehouses.Sell_Price = h.Sell_Price;
-            Warehouses.Selled_Quantity = h.Selled_Quantity;
+            Warehouses.Quantity = h.Quantity;
             Warehouses.Customer_name = h.Customer_name;
             Warehouses.CustomerEmail = h.CustomerEmail;
             Warehouses.Customer_mobiler = h.Customer_mobiler;
+            Warehouses.stock=h.stock;
 
             db.SaveChanges();
             return Redirect("ViewWarehouse");
@@ -106,7 +143,7 @@ namespace Trifo_Inventory_Management_.Controllers
                          select sh).SingleOrDefault();
 
 
-            return Redirect("ViewWarehouse");
+            return View(Warehouses);
         }
     }
 }

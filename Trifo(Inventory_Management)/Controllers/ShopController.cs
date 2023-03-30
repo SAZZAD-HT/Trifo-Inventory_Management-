@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
@@ -37,8 +38,34 @@ namespace Trifo_Inventory_Management_.Controllers
         
         
       [HttpPost]
-        public ActionResult AddToshop(Shop h)
+        public ActionResult AddToshop(Shop h, HttpPostedFileBase file)
         {
+
+            if (file != null && file.ContentLength > 0)
+            {
+
+             
+                var path = Server.MapPath("~/App_data/PicturesSave");
+                var maxNumber = Directory.GetFiles(path)
+                    .Select(f => Path.GetFileNameWithoutExtension(f))
+                    .Where(f => f.StartsWith("pic"))
+                    .Select(f => int.Parse(f.Substring(3)))
+                    .DefaultIfEmpty(0)
+                    .Max();
+                var newFileName = $"pic{maxNumber + 1}{Path.GetExtension(file.FileName)}";
+                var fullPath = Path.Combine(path, newFileName);
+                file.SaveAs(fullPath);
+                h.sPicture = fullPath;
+            }
+            if (h.Quantity != null)
+            {
+                h.stock = "IN STOCK";
+            }
+            else
+            {
+                h.stock = "OUT OF STOCK";
+
+            }
             var db = new dbContext();
             db.Shop.Add(h);
             db.SaveChanges();
@@ -70,10 +97,11 @@ namespace Trifo_Inventory_Management_.Controllers
             Shops.sell_date=h.sell_date;
             Shops.Buy_Price=h.Buy_Price;
             Shops.Sell_Price = h.Sell_Price;
-            Shops.Selled_Quantity=h.Selled_Quantity;
+            Shops.Quantity=h.Quantity;
             Shops.Customer_name=h.Customer_name;
             Shops.CustomerEmail=h.CustomerEmail;
             Shops.Customer_mobiler=h.Customer_mobiler;
+            Shops.stock=h.stock;    
 
             db.SaveChanges();
             return Redirect("ViewShop");
@@ -97,7 +125,7 @@ namespace Trifo_Inventory_Management_.Controllers
                          select shi).SingleOrDefault();
             db.Shop.Remove(Shops);
             db.SaveChanges();
-            return View(Shops);
+            return Redirect("ViewShop");
         }
         public ActionResult Details(int id)
         {
@@ -107,7 +135,12 @@ namespace Trifo_Inventory_Management_.Controllers
                          select sh).SingleOrDefault();
 
 
-            return Redirect("ViewShop");
+            return View(Shops);
+        }
+        public ActionResult image_cheack()
+        {
+            var dummy = "C:\\Users\\SAZZAD H.T\\source\\repos\\Trifo(Inventory_Management)\\Trifo(Inventory_Management)\\App_data\\PicturesSave\\pic8.jpg";
+            return View(dummy);
         }
 
 

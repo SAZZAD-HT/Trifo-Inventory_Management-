@@ -101,7 +101,7 @@ namespace Trifo_Inventory_Management_.Controllers
                 //var filePath = $"~/App_data/pic_uploaded/{newFileName}";
                 //PA.pic=filePath;
 
-                var path = Server.MapPath("~/App_data/PicturesSave"); 
+                var path = Server.MapPath("~/PicturesSave"); 
                 var maxNumber = Directory.GetFiles(path)
                     .Select(f => Path.GetFileNameWithoutExtension(f))
                     .Where(f => f.StartsWith("pic"))

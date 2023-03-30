@@ -5,44 +5,54 @@
 }
 
 <h2>Viewshop</h2>
-
+<style>
+    .avatar {
+        vertical-align: middle;
+        position: relative; /* or any other valid position value */
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+</style>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "AddToshop")
 </p>
-<table class="table">
+<table class="table" border="0" >
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.sProduct_name)
+            <h3> Product name</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.country)
+            <h3> Country</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sDescription)
+            <h3> Description</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Buy_Price)
+            <h3>Buy Price</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sell_Price)
+            <h3> Sell price</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sPicture)
+            <h3> Picture</h3>
+        <th>
+            <h3>sell_date</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sell_date)
+            <h3>Selled_Quantity</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Selled_Quantity)
+            <h3>Customer_name</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customer_name)
+            <h3>CustomerEmail</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerEmail)
+            <h3>Customer_mobiler</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customer_mobiler)
+            <h3>STOCK</h3>
         </th>
         <th></th>
     </tr>
@@ -66,12 +76,15 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.sPicture)
+            <img src="@Url.Content(item.sPicture)" alt="Image Description" />
+
+            <img src="@item.sPicture" alt="" class="avatar">
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.sell_date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Selled_Quantity)
+            @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Customer_name)
@@ -83,9 +96,12 @@
             @Html.DisplayFor(modelItem => item.Customer_mobiler)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Shop_prd_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Shop_prd_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Shop_prd_id })
+            @Html.DisplayFor(modelItem => item.stock)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Shop_prd_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Shop_prd_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Shop_prd_id })
         </td>
     </tr>
 }
