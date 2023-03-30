@@ -6,108 +6,111 @@
 
 <h2>AddToshop</h2>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm("AddToshop", "Shop", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Shop</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.sProduct_name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.sProduct_name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.sProduct_name, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.country, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.country, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.country, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4>Shop</h4>
+    <hr />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.sDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.sDescription, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.sDescription, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        <h3>ProductName</h3>
+        <div class="col-md-10">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Buy_Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Buy_Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Buy_Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <input type="text" name="sProduct_name" value="">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sell_Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sell_Price, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sell_Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.sPicture, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.sPicture, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.sPicture, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.sell_date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.sell_date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.sell_date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Selled_Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Selled_Quantity, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Selled_Quantity, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Customer_name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Customer_name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Customer_name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CustomerEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Customer_mobiler, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Customer_mobiler, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Customer_mobiler, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
         </div>
     </div>
+
+    <div class="form-group">
+        <h3>country</h3>
+        <div class="col-md-10">
+            <input type="text" name="country" value="">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <h3>Quantity</h3>
+        <div class="col-md-10">
+            <input type="number" name="Quantity" value="">
+
+        </div>
+    </div>
+    <h3>Buy_Price</h3>
+    <div class="col-md-10">
+        <input type="number" name="Buy_Price" value="">
+
+    </div>
+</div>
+
+    <div class="form-group">
+        <h3>sDescription</h3>
+        <div class="col-md-10">
+            <input type="text" name="sDescription" value="">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+    
+
+    @*<div class="form-group">
+            <h3>Sell_Price</h3>
+            <div class="col-md-10">
+                <input type="text" name="Sell_Price" value="">
+
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <h3>sPicture</h3>
+        <div class="col-md-10">
+            <input type="file" name="file" value="">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <h3>sell_date</h3>
+        <div class="col-md-10">
+            <input type="date" name="sell_date" value="">
+
+        </div>
+    </div>
+
+
+
+    @**<div class="form-group">
+            <h3>Customer_name</h3>
+            <div class="col-md-10">
+                <input type="text" name="Customer_name" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>CustomerEmail</h3>
+            <div class="col-md-10">
+                <input type="text" name="CustomerEmail" value="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>Customer_mobiler</h3>
+            <div class="col-md-10">
+                <input type="text" name="Customer_mobiler" value="">
+
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
