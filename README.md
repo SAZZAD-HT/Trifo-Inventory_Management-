@@ -1,3 +1,4 @@
+# ITS A Inventory Managing app
 #Preview
 ![pic 1](https://user-images.githubusercontent.com/66819027/228913549-ea710412-c356-4b39-b733-1f08600ef0e2.jpg)
 ![pic2](https://user-images.githubusercontent.com/66819027/228913561-e2c22643-8596-42f2-afb3-2063935c6119.jpg)
