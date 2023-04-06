@@ -45,7 +45,7 @@ namespace Trifo_Inventory_Management_.Controllers
             {
 
              
-                var path = Server.MapPath("~/App_data/PicturesSave");
+                var path = Server.MapPath("~/Content/images");
                 var maxNumber = Directory.GetFiles(path)
                     .Select(f => Path.GetFileNameWithoutExtension(f))
                     .Where(f => f.StartsWith("pic"))
@@ -139,7 +139,7 @@ namespace Trifo_Inventory_Management_.Controllers
         }
         public ActionResult image_cheack()
         {
-            var dummy = "C:\\Users\\SAZZAD H.T\\source\\repos\\Trifo(Inventory_Management)\\Trifo(Inventory_Management)\\App_data\\PicturesSave\\pic8.jpg";
+            var dummy = "G:\\Trifo-Inventory_Management-\\Trifo(Inventory_Management)\\Content\\images\\pic1.jpeg";
             return View(dummy);
         }
 
