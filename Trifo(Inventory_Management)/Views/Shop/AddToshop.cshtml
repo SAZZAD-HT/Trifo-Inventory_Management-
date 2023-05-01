@@ -1,0 +1,118 @@
+﻿@model Trifo_Inventory_Management_.Models.ef.Shop
+
+@{
+    ViewBag.Title = "AddToshop";
+}
+
+<h2>AddToshop</h2>
+
+
+@using (Html.BeginForm("AddToshop", "Shop", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Shop</h4>
+    <hr />
+
+    <div class="form-group">
+        <h3>ProductName</h3>
+        <div class="col-md-10">
+
+            <input type="text" name="sProduct_name" value="">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <h3>country</h3>
+        <div class="col-md-10">
+            <input type="text" name="country" value="">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <h3>Quantity</h3>
+        <div class="col-md-10">
+            <input type="number" name="Quantity" value="">
+
+        </div>
+    </div>
+    <h3>Buy_Price</h3>
+    <div class="col-md-10">
+        <input type="number" name="Buy_Price" value="">
+
+    </div>
+</div>
+
+    <div class="form-group">
+        <h3>sDescription</h3>
+        <div class="col-md-10">
+            <input type="text" name="sDescription" value="">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+    
+
+    @*<div class="form-group">
+            <h3>Sell_Price</h3>
+            <div class="col-md-10">
+                <input type="text" name="Sell_Price" value="">
+
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <h3>sPicture</h3>
+        <div class="col-md-10">
+            <input type="file" name="file" value="">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <h3>sell_date</h3>
+        <div class="col-md-10">
+            <input type="date" name="sell_date" value="">
+
+        </div>
+    </div>
+
+
+
+    @**<div class="form-group">
+            <h3>Customer_name</h3>
+            <div class="col-md-10">
+                <input type="text" name="Customer_name" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>CustomerEmail</h3>
+            <div class="col-md-10">
+                <input type="text" name="CustomerEmail" value="">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>Customer_mobiler</h3>
+            <div class="col-md-10">
+                <input type="text" name="Customer_mobiler" value="">
+
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

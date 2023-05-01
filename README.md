@@ -1,9 +1,12 @@
+# ITS A Inventory Managing app
+#Preview
+![pic 1](https://user-images.githubusercontent.com/66819027/228913549-ea710412-c356-4b39-b733-1f08600ef0e2.jpg)
+![pic2](https://user-images.githubusercontent.com/66819027/228913561-e2c22643-8596-42f2-afb3-2063935c6119.jpg)
+# I have Completed the project in ASP.CORE  AS requirments of client
 <!DOCTYPE html>
 <head>
-	<title> v1</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Inventory management website built with ASP.NET MVC framework. Allows users to view, add, edit, and delete items in an inventory.">
-	<meta name="keywords" content="Inventory management, ASP.NET, MVC, C#, HTML, CSS, JavaScript">
+	
+	
 </head>
 <body>
 	<header>
@@ -43,10 +46,8 @@
 		<p>This project is licensed under the MIT License - see the LICENSE.md file for details.</p>
 		<h2>Acknowledgments</h2>
 		
-		<img src="https://avatars.githubusercontent.com/u/66819027?v=4" alt="example image">
+		
 	</main>
-	<footer>
-		<p>&copy; 2023 GitHub, Inc.</p>
-	</footer>
+	
 </body>
 </html>
