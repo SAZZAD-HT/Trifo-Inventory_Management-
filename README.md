@@ -4,12 +4,7 @@
 ![pic2](https://user-images.githubusercontent.com/66819027/228913561-e2c22643-8596-42f2-afb3-2063935c6119.jpg)
 # I have Completed the project in ASP.CORE  AS requirments of client
 <!DOCTYPE html>
-<head>
-
-
-
- 
-	
+<head>	
 </head>
 <body>
 	<header>
